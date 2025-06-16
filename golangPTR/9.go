@@ -1,18 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
-func changePointer(/* parameter di sini */) {
-    // Buat pointer menunjuk ke nilai baru (88)
-    newValue := 88
-    // Ubah pointer agar menunjuk ke newValue
+func changePointer(ptr **int) {
+	// Buat pointer menunjuk ke nilai baru (88)
+	newValue := 88
+	*ptr = &newValue
+	// Ubah pointer agar menunjuk ke newValue
 }
 
 func main() {
-    x := 42
-    ptr := &x
-    
-    fmt.Println("Sebelum:", *ptr)
-    changePointer(/* argumen di sini */)
-    fmt.Println("Sesudah:", *ptr)
+	x := 42
+	ptr := &x
+	a := &ptr
+
+
+	fmt.Println(reflect.TypeOf(a))
+
+	fmt.Println("Sebelum:", *ptr)
+	changePointer(&ptr)
+	fmt.Println("Sesudah:", *ptr)
 }
+
+// untuk soal ini apakah walau parameter yang diterima adalah pointer-pointer 
+// compiler akan langsung mengenali walau kita mengirim hanya pointer? 
