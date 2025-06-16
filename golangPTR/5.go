@@ -8,7 +8,7 @@ type Person struct {
 }
 
 func updateAge(p *Person) {
-    p.Age++
+    p.Age++ // it's equivalent to (*p).Age
 }
 
 func main() {
