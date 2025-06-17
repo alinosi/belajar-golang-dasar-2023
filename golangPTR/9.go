@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"reflect"
 )
 
 func changePointer(ptr **int) {
@@ -15,10 +14,6 @@ func changePointer(ptr **int) {
 func main() {
 	x := 42
 	ptr := &x
-	a := &ptr
-
-
-	fmt.Println(reflect.TypeOf(a))
 
 	fmt.Println("Sebelum:", *ptr)
 	changePointer(&ptr)
@@ -26,5 +21,5 @@ func main() {
 }
 
 // untuk soal ini apakah walau parameter yang diterima adalah pointer-pointer.
-// compiler akan langsung mengenali walau kita hanya menggunakan pointer 
-// walau di lingkungan fungsinya yang didefinisikan adlaah pointer pointer? 
+// compiler akan langsung mengenali walau kita hanya menggunakan pointer
+// walau di lingkungan fungsinya yang didefinisikan adlaah pointer pointer?
